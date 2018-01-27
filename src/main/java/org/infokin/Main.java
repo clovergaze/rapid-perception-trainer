@@ -52,6 +52,7 @@ public class Main extends Application {
 
         primaryStage.setScene(scene);
         primaryStage.setTitle(Global.APP_TITLE);
+        primaryStage.setResizable(false);
 
         // Display stage
         primaryStage.show();
