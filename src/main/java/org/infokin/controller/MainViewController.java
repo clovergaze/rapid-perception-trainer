@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -27,6 +28,10 @@ public class MainViewController extends Controller {
 
     private Timer timer;
 
+    private int state = 0;
+
+    private int flashDuration = 200;
+
     /*---------------------------
     | User interface components |
     ---------------------------*/
@@ -46,6 +51,9 @@ public class MainViewController extends Controller {
     @FXML
     private Label outputLabel;
 
+    @FXML
+    private Slider flashDurationSlider;
+
     /*--------------------
     | Life cycle methods |
     --------------------*/
@@ -56,6 +64,9 @@ public class MainViewController extends Controller {
      */
     @FXML
     private void initialize() {
+        // Set handling for flash duration slider
+        flashDurationSlider.valueProperty().addListener((value, oldValue, newValue) -> flashDuration = newValue.intValue());
+
         // Set space bar handler
         rootNode.setOnKeyReleased(keyEvent -> {
             if (keyEvent.getCode().equals(KeyCode.SPACE)) {
@@ -78,7 +89,6 @@ public class MainViewController extends Controller {
     private void handleSpaceBarPressed() {
         if (isRunning) {
             stop();
-            reset();
         } else {
             start();
         }
@@ -100,9 +110,6 @@ public class MainViewController extends Controller {
         timer = new Timer();
 
         timer.schedule(new TimerTask() {
-
-            private int state = 0;
-
             @Override
             public void run() {
                 if (state == 0) {
@@ -128,9 +135,8 @@ public class MainViewController extends Controller {
     private void stop() {
         timer.cancel();
         isRunning = false;
-    }
 
-    private void reset() {
+        state = 0;
 
         clearMarks();
 
@@ -144,7 +150,7 @@ public class MainViewController extends Controller {
         long startTime = System.currentTimeMillis();
         long elapsedTime = 0L;
 
-        while (elapsedTime < 200) {
+        while (elapsedTime < flashDuration) {
             elapsedTime = System.currentTimeMillis() - startTime;
         }
 

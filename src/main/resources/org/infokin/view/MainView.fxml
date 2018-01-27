@@ -30,8 +30,8 @@
             <Slider blockIncrement="1.0" majorTickUnit="1.0" max="5.0" min="1.0" minorTickCount="0"
                     showTickLabels="true" showTickMarks="true" snapToTicks="true"/>
             <Label text="Text flash duration:"/>
-            <Slider majorTickUnit="40.0" max="300.0" min="20.0" showTickLabels="true" showTickMarks="true"
-                    value="200.0"/>
+            <Slider fx:id="flashDurationSlider" majorTickUnit="40.0" max="300.0" min="20.0" showTickLabels="true"
+                    showTickMarks="true" value="200.0"/>
             <Label text="Interval duration:"/>
             <Slider majorTickUnit="500.0" max="3000.0" min="500.0" showTickLabels="true" showTickMarks="true"
                     value="1000.0"/>
