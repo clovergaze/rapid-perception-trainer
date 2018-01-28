@@ -23,6 +23,16 @@ public class Global {
      */
     public static final String MAIN_VIEW_LAYOUT = "view/MainView.fxml";
 
+    /**
+     * Number of word lists.
+     */
+    public static final int NUMBER_OF_WORD_LISTS = 4;
+
+    /**
+     * Array with lists of words.
+     */
+    public static final String[][] WORDS = new String[NUMBER_OF_WORD_LISTS][];
+
     /*------------------
     | Global variables |
     ------------------*/

@@ -8,6 +8,11 @@ import javafx.stage.Stage;
 import org.infokin.controller.MainViewController;
 import org.infokin.util.LayoutLoader;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.stream.Collectors;
+
 /**
  * Contains entry point and setup code of the application.
  */
@@ -36,6 +41,8 @@ public class Main extends Application {
         // Save main window instance
         Global.primaryStage = primaryStage;
 
+        loadWordLists();
+
         try {
             // Load main layout
             Global.mainViewController = (MainViewController) LayoutLoader.loadLayout(Global.MAIN_VIEW_LAYOUT).getController();
@@ -62,5 +69,20 @@ public class Main extends Application {
             Platform.exit();
             System.exit(0);
         });
+    }
+
+    /**
+     * Loads all word lists from resources.
+     */
+    private void loadWordLists() {
+        for (int counter = 0; counter < Global.NUMBER_OF_WORD_LISTS; counter++) {
+            InputStream inputStream = Global.application.getClass().getResourceAsStream("words/words." + (counter + 1));
+
+            String result = new BufferedReader(new InputStreamReader(inputStream)).lines().collect(Collectors.joining("\n"));
+            String[] words = result.split("\n");
+
+            Global.WORDS[counter] = new String[words.length];
+            Global.WORDS[counter] = words;
+        }
     }
 }
