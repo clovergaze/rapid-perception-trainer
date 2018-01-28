@@ -10,8 +10,10 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import org.infokin.Global;
 import org.infokin.controller.api.Controller;
 
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -29,6 +31,8 @@ public class MainViewController extends Controller {
     private Timer timer;
 
     private int state = 0;
+
+    private int textLength = 1;
 
     private int flashDuration = 200;
 
@@ -52,6 +56,9 @@ public class MainViewController extends Controller {
     private Label outputLabel;
 
     @FXML
+    private Slider textLengthSlider;
+
+    @FXML
     private Slider flashDurationSlider;
 
     /*--------------------
@@ -64,6 +71,9 @@ public class MainViewController extends Controller {
      */
     @FXML
     private void initialize() {
+        // Set handling for text length slider
+        textLengthSlider.valueProperty().addListener((value, oldValue, newValue) -> textLength = newValue.intValue());
+
         // Set handling for flash duration slider
         flashDurationSlider.valueProperty().addListener((value, oldValue, newValue) -> flashDuration = newValue.intValue());
 
@@ -123,7 +133,7 @@ public class MainViewController extends Controller {
                     state++;
                 } else if (state == 3) {
                     clearMarks();
-                    flashText("the");
+                    flashText();
                     state = 0;
                 }
             }
@@ -144,8 +154,10 @@ public class MainViewController extends Controller {
         displayText("Press space bar to start/stop");
     }
 
-    private void flashText(String text) {
-        Platform.runLater(() -> displayText(text));
+    private void flashText() {
+        String word = getNextWord();
+
+        Platform.runLater(() -> displayText(word));
 
         long startTime = System.currentTimeMillis();
         long elapsedTime = 0L;
@@ -155,6 +167,14 @@ public class MainViewController extends Controller {
         }
 
         Platform.runLater(this::clearText);
+    }
+
+    private String getNextWord() {
+        Random random = new Random();
+
+        int value = random.nextInt(Global.WORDS[textLength - 1].length);
+
+        return Global.WORDS[textLength - 1][value];
     }
 
     private void displayText(String text) {
