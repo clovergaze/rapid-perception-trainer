@@ -5,8 +5,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="rootNode" prefHeight="300.0" prefWidth="400.0"
-            xmlns="http://javafx.com/javafx/8.0.121" fx:controller="org.infokin.controller.MainViewController">
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="rootNode" fx:controller="org.infokin.controller.MainViewController"
+            prefHeight="300.0" prefWidth="400.0">
     <top>
         <MenuBar>
             <Menu mnemonicParsing="false" text="File">
@@ -18,11 +20,11 @@
         </MenuBar>
     </top>
     <center>
-        <AnchorPane fx:id="outputPane" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+        <AnchorPane style="-fx-background-color: white;" BorderPane.alignment="CENTER">
             <Canvas fx:id="canvas" height="175.0" width="400.0"/>
             <Label fx:id="outputLabel" alignment="CENTER" text="Press space bar to start/stop"
-                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                   AnchorPane.topAnchor="0.0">
+                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                 <font>
                     <Font name="System Bold" size="14.0"/>
                 </font>
@@ -38,8 +40,8 @@
             <Slider fx:id="flashDurationSlider" majorTickUnit="40.0" max="300.0" min="20.0" showTickLabels="true"
                     showTickMarks="true" value="200.0"/>
             <Label text="Interval duration:"/>
-            <Slider majorTickUnit="500.0" max="3000.0" min="500.0" showTickLabels="true" showTickMarks="true"
-                    value="1000.0"/>
+            <Slider fx:id="intervalDurationSlider" majorTickUnit="500.0" max="3000.0" min="500.0" showTickLabels="true"
+                    showTickMarks="true" value="1000.0"/>
             <padding>
                 <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
             </padding>
