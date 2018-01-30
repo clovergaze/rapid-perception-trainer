@@ -7,7 +7,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import org.infokin.Global;
@@ -36,6 +36,10 @@ public class MainViewController extends Controller {
 
     private int flashDuration = 200;
 
+    private int intervalDuration = 1000;
+
+    private boolean intervalDurationChanged = false;
+
     /*---------------------------
     | User interface components |
     ---------------------------*/
@@ -45,9 +49,6 @@ public class MainViewController extends Controller {
      */
     @FXML
     private BorderPane rootNode;
-
-    @FXML
-    private AnchorPane outputPane;
 
     @FXML
     private Canvas canvas;
@@ -60,6 +61,9 @@ public class MainViewController extends Controller {
 
     @FXML
     private Slider flashDurationSlider;
+
+    @FXML
+    private Slider intervalDurationSlider;
 
     /*--------------------
     | Life cycle methods |
@@ -76,6 +80,20 @@ public class MainViewController extends Controller {
 
         // Set handling for flash duration slider
         flashDurationSlider.valueProperty().addListener((value, oldValue, newValue) -> flashDuration = newValue.intValue());
+
+        // Set handling for interval duration.
+        intervalDurationSlider.valueProperty().addListener((value, oldValue, newValue) -> {
+            intervalDuration = newValue.intValue();
+            intervalDurationChanged = true;
+        });
+
+        intervalDurationSlider.setOnMouseReleased((MouseEvent event) -> {
+            if (intervalDurationChanged && isRunning) {
+                timer.cancel();
+                startSequenceTimer(intervalDuration);
+                intervalDurationChanged = false;
+            }
+        });
 
         // Set space bar handler
         rootNode.setOnKeyReleased(keyEvent -> {
@@ -109,14 +127,18 @@ public class MainViewController extends Controller {
     ---------*/
 
     private void start() {
-
         clearText();
+        startSequenceTimer(intervalDuration);
 
-        /*
-         * Prepare and start timer.
-         *
-         * The Timer will fire continuously in equal intervals until it is canceled.
-         */
+        isRunning = true;
+    }
+
+    /*
+     * Prepare and start timer.
+     *
+     * The Timer will fire continuously in equal intervals until it is canceled.
+     */
+    private void startSequenceTimer(long interval) {
         timer = new Timer();
 
         timer.schedule(new TimerTask() {
@@ -137,9 +159,7 @@ public class MainViewController extends Controller {
                     state = 0;
                 }
             }
-        }, 0, 1000);
-
-        isRunning = true;
+        }, 0, interval);
     }
 
     private void stop() {
