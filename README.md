@@ -5,7 +5,7 @@ The inspiration for this program comes from a Flash application I used almost a 
 The words are mostly [basic English words](https://en.wiktionary.org/wiki/Category:English_basic_words) as they appear on the Wikionary.
 
 ## Installation
-To use the program you can download or clone this repository and build it or you can download a prebuilt binary version from <a href="http://www.infokin.org/index.php?id=3" target="_blank">here</a>.
+To use the program you can download or clone this repository and build it or you can download a prebuilt binary version from [here](http://www.infokin.org/index.php?id=3).
 
 ## Start
 If you downloaded a .ZIP file extract it and navigate to the .JAR file.
