@@ -1,8 +1,8 @@
 # Rapid Perception Trainer
 The goal of this program is to help train the eye-brain connection to rapidly recognize text.
 
-The inspiration for this program comes from a Flash application I used almost a decade ago, that had a similar concept, but was missing options to customize the training sequence and had no open source.
-The words are mostly [basic English words](https://en.wiktionary.org/wiki/Category:English_basic_words) as they appear on Wikionary.
+The inspiration for this program comes from a Flash application I used almost a decade ago, that had a similar concept, but was missing options to customize the training sequence.
+The words that are used are mostly [basic English words](https://en.wiktionary.org/wiki/Category:English_basic_words) as they appear on Wikionary.
 
 ## Installation
 To use the program you can download or clone this repository and build it or you can download a prebuilt binary version from [here](http://www.infokin.org/index.php?id=4).
