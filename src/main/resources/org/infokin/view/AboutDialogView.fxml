@@ -7,17 +7,18 @@
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
             fx:id="rootNode" fx:controller="org.infokin.controller.AboutDialogViewController"
             prefHeight="280.0" prefWidth="380.0">
-    <Label layoutX="98.0" layoutY="40.0" text="Rapid Perception Trainer">
+    <Label alignment="CENTER" layoutY="37.0" prefWidth="380.0" text="Rapid Perception Trainer">
         <font>
             <Font name="System Bold" size="13.0"/>
         </font>
     </Label>
-    <Label layoutX="153.0" layoutY="63.0" text="Version 0.3"/>
-    <Label layoutX="76.0" layoutY="115.0" text="Copyright (c) 2018 Johannes Hillert"/>
-    <Label layoutX="88.0" layoutY="140.0" text="Licensed under the MIT license."/>
-    <Hyperlink fx:id="homepageHyperlink" layoutX="113.0" layoutY="167.0" onAction="#handleHomepageHyperlink"
-               text="Homepage"/>
-    <Hyperlink fx:id="githubHyperlink" layoutX="208.0" layoutY="167.0" onAction="#handleGitHubHyperlink" text="GitHub"/>
-    <Button fx:id="okButton" layoutX="146.0" layoutY="216.0" mnemonicParsing="false" onAction="#handleOkButtonClick"
+    <Label alignment="CENTER" layoutY="61.0" prefWidth="380.0" text="Version 0.3"/>
+    <Label alignment="CENTER" layoutY="106.0" prefWidth="380.0" text="Copyright (c) 2018 Johannes Hillert"/>
+    <Label alignment="CENTER" layoutY="131.0" prefWidth="380.0" text="Licensed under the MIT license."/>
+    <Hyperlink fx:id="homepageHyperlink" alignment="CENTER" layoutX="148.0" layoutY="157.0" onAction="#handleHomepageHyperlink"
+               prefWidth="85.0" text="Homepage"/>
+    <Hyperlink fx:id="githubHyperlink" alignment="CENTER" layoutX="160.0" layoutY="181.0" onAction="#handleGitHubHyperlink"
+               prefWidth="60.0" text="GitHub"/>
+    <Button fx:id="okButton" layoutX="153.0" layoutY="226.0" mnemonicParsing="false" onAction="#handleOkButtonClick"
             prefWidth="75.0" text="Ok"/>
 </AnchorPane>
