@@ -14,14 +14,19 @@ public class Global {
 	------------------*/
 
     /**
-     * Application title
+     * Application title.
      */
     public static final String APP_TITLE = "Rapid Perception Trainer";
 
     /**
-     * Main view resource
+     * Main view resource.
      */
     public static final String MAIN_VIEW_LAYOUT = "view/MainView.fxml";
+
+    /**
+     * About dialog view resource.
+     */
+    public static final String ABOUT_DIALOG_VIEW_LAYOUT = "view/AboutDialogView.fxml";
 
     /**
      * Number of word lists.

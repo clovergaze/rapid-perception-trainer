@@ -15,7 +15,7 @@
                 <MenuItem mnemonicParsing="false" onAction="#handleCloseApplication" text="Close"/>
             </Menu>
             <Menu mnemonicParsing="false" text="Help">
-                <MenuItem mnemonicParsing="false" text="About"/>
+                <MenuItem mnemonicParsing="false" onAction="#handleAboutApplication" text="About"/>
             </Menu>
         </MenuBar>
     </top>
