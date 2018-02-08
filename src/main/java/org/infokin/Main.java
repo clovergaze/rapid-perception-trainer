@@ -32,6 +32,7 @@ public class Main extends Application {
      * {@inheritDoc}
      * <p>
      * Initializes and displays the primary stage.
+     * </p>
      */
     @Override
     public void start(Stage primaryStage) {
