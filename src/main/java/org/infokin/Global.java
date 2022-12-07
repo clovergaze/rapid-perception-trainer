@@ -13,47 +13,47 @@ public class Global {
 	| Global constants |
 	------------------*/
 
-    /**
-     * Application title.
-     */
-    public static final String APP_TITLE = "Rapid Perception Trainer";
+  /**
+   * Application title.
+   */
+  public static final String APP_TITLE = "Rapid Perception Trainer";
 
-    /**
-     * Main view resource.
-     */
-    public static final String MAIN_VIEW_LAYOUT = "view/MainView.fxml";
+  /**
+   * Main view resource.
+   */
+  public static final String MAIN_VIEW_LAYOUT = "view/MainView.fxml";
 
-    /**
-     * About dialog view resource.
-     */
-    public static final String ABOUT_DIALOG_VIEW_LAYOUT = "view/AboutDialogView.fxml";
+  /**
+   * About dialog view resource.
+   */
+  public static final String ABOUT_DIALOG_VIEW_LAYOUT = "view/AboutDialogView.fxml";
 
-    /**
-     * Number of word lists.
-     */
-    public static final int NUMBER_OF_WORD_LISTS = 4;
+  /**
+   * Number of word lists.
+   */
+  public static final int NUMBER_OF_WORD_LISTS = 4;
 
-    /**
-     * Array with lists of words.
-     */
-    public static final String[][] WORDS = new String[NUMBER_OF_WORD_LISTS][];
+  /**
+   * Array with lists of words.
+   */
+  public static final String[][] WORDS = new String[NUMBER_OF_WORD_LISTS][];
 
     /*------------------
     | Global variables |
     ------------------*/
 
-    /**
-     * The application instance.
-     */
-    public static Application application = null;
+  /**
+   * The application instance.
+   */
+  public static Application application = null;
 
-    /**
-     * The main window.
-     */
-    public static Stage primaryStage = null;
+  /**
+   * The main window.
+   */
+  public static Stage primaryStage = null;
 
-    /**
-     * The main view controller with navigation elements.
-     */
-    public static MainViewController mainViewController = null;
+  /**
+   * The main view controller with navigation elements.
+   */
+  public static MainViewController mainViewController = null;
 }

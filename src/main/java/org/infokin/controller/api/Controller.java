@@ -8,19 +8,19 @@ import org.infokin.Global;
  */
 public abstract class Controller {
 
-    /**
-     * Gets the top-most element in the layout hierarchy tree.
-     *
-     * @return The top-most node in the layout hierarchy.
-     */
-    abstract public Node getRootNode();
+  /**
+   * Gets the top-most element in the layout hierarchy tree.
+   *
+   * @return The top-most node in the layout hierarchy.
+   */
+  abstract public Node getRootNode();
 
-    /**
-     * Sets the currently displayed view to parameter {@code view}.
-     *
-     * @param view The new view that is set as main view.
-     */
-    protected void setCurrentView(Node view) {
-        Global.mainViewController.getRootNode().setCenter(view);
-    }
+  /**
+   * Sets the currently displayed view to parameter {@code view}.
+   *
+   * @param view The new view that is set as main view.
+   */
+  protected void setCurrentView(Node view) {
+    Global.mainViewController.getRootNode().setCenter(view);
+  }
 }

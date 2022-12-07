@@ -18,76 +18,76 @@ public class AboutDialogViewController extends Controller {
     | Member variables |
     ------------------*/
 
-    private final String homepageURL = "http://www.infokin.org/";
+  private final String homepageURL = "http://www.infokin.org/";
 
-    private final String githubURL = "https://github.com/clovergaze/rapid-perception-trainer";
+  private final String githubURL = "https://github.com/clovergaze/rapid-perception-trainer";
 
     /*---------------------------
     | User interface components |
     ---------------------------*/
 
-    /**
-     * The root node of this view.
-     */
-    @FXML
-    private AnchorPane rootNode;
+  /**
+   * The root node of this view.
+   */
+  @FXML
+  private AnchorPane rootNode;
 
-    @FXML
-    private Button okButton;
+  @FXML
+  private Button okButton;
 
-    @FXML
-    private Hyperlink homepageHyperlink;
+  @FXML
+  private Hyperlink homepageHyperlink;
 
-    @FXML
-    private Hyperlink githubHyperlink;
+  @FXML
+  private Hyperlink githubHyperlink;
 
     /*--------------------
     | Life cycle methods |
     --------------------*/
 
-    /**
-     * Initializes the controller class. This method is automatically called
-     * after the FXML file has been loaded.
-     */
-    @FXML
-    private void initialize() {
-        homepageHyperlink.setTooltip(new Tooltip(homepageURL));
-        githubHyperlink.setTooltip(new Tooltip(githubURL));
+  /**
+   * Initializes the controller class. This method is automatically called
+   * after the FXML file has been loaded.
+   */
+  @FXML
+  private void initialize() {
+    homepageHyperlink.setTooltip(new Tooltip(homepageURL));
+    githubHyperlink.setTooltip(new Tooltip(githubURL));
 
-        Platform.runLater(() -> okButton.requestFocus());
-    }
+    Platform.runLater(() -> okButton.requestFocus());
+  }
 
     /*-------------------------
     | User interface handlers |
     -------------------------*/
 
-    @FXML
-    private void handleHomepageHyperlink() {
-        Global.application.getHostServices().showDocument(homepageURL);
-    }
+  @FXML
+  private void handleHomepageHyperlink() {
+    Global.application.getHostServices().showDocument(homepageURL);
+  }
 
-    @FXML
-    private void handleGitHubHyperlink() {
-        Global.application.getHostServices().showDocument(githubURL);
-    }
+  @FXML
+  private void handleGitHubHyperlink() {
+    Global.application.getHostServices().showDocument(githubURL);
+  }
 
-    @FXML
-    private void handleOkButtonClick() {
-    }
+  @FXML
+  private void handleOkButtonClick() {
+  }
 
     /*---------------------
     | Getters and Setters |
     ---------------------*/
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public AnchorPane getRootNode() {
-        return rootNode;
-    }
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public AnchorPane getRootNode() {
+    return rootNode;
+  }
 
-    public Button getOkButton() {
-        return okButton;
-    }
+  public Button getOkButton() {
+    return okButton;
+  }
 }
